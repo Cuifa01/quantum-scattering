@@ -6,7 +6,7 @@ The main result is simple: the potential supports two low-energy resonances. The
 
 ## Model
 
-Natural units are used throughout, with \(\hbar=m=1\). The Hamiltonian is
+Natural units are used throughout, with $\hbar=m=1$. The Hamiltonian is
 
 $$
 H=-\frac{1}{2}\frac{d^2}{dx^2}+V(x),
@@ -14,20 +14,20 @@ H=-\frac{1}{2}\frac{d^2}{dx^2}+V(x),
 V(x)=\left(\frac{x^2}{2}-0.8\right)e^{-0.1x^2}.
 $$
 
-The potential has a central well and two barriers near \(x=\pm\sqrt{11.6}\). Their height is about 1.57, so the low-energy states in the well are not truly bound: they can leak into the continuum by tunnelling.
+The potential has a central well and two barriers near $x=\pm\sqrt{11.6}$. Their height is about 1.57, so the low-energy states in the well are not truly bound: they can leak into the continuum by tunnelling.
 
 The two resonances found from the stationary calculation are:
 
-| Resonance | Transmission peak | Complex-scaled pole | Width \(\Gamma=-2\operatorname{Im}E\) |
+| Resonance | Transmission peak | Complex-scaled pole | Width $\Gamma=-2\operatorname{Im}E$ |
 |---|---:|---:|---:|
-| First | 0.62097030 | \(0.620971-0.000058i\) | 0.000116 |
-| Second | 1.32882395 | \(1.327197-0.015447i\) | 0.030894 |
+| First | 0.62097030 | $0.620971-0.000058i$ | 0.000116 |
+| Second | 1.32882395 | $1.327197-0.015447i$ | 0.030894 |
 
 The first resonance is extremely narrow. The second has a much larger width and therefore a noticeably shorter lifetime.
 
 ## 1. Stationary scattering
 
-For a fixed energy, a transmitted plane wave is imposed on the right of the potential and the Schrödinger equation is propagated backwards across a uniform grid. Matching the result to incoming and reflected waves on the left gives the amplitudes \(A(E)\), \(B(E)\), and therefore
+For a fixed energy, a transmitted plane wave is imposed on the right of the potential and the Schrödinger equation is propagated backwards across a uniform grid. Matching the result to incoming and reflected waves on the left gives the amplitudes $A(E)$, $B(E)$, and therefore
 
 $$
 T(E)=\frac{1}{|A(E)|^2},
@@ -35,7 +35,7 @@ T(E)=\frac{1}{|A(E)|^2},
 R(E)=\frac{|B(E)|^2}{|A(E)|^2}.
 $$
 
-The calculation uses \(x\in[-50,50]\) and \(\Delta x=0.0025\). A broad energy scan first locates the resonances; each peak is then refined on a much denser local grid.
+The calculation uses $x\in[-50,50]$ and $\Delta x=0.0025$. A broad energy scan first locates the resonances; each peak is then refined on a much denser local grid.
 
 ![Transmission probability through the double barrier](results/part3_stationary_scattering/transmission_profile.png)
 
@@ -45,7 +45,7 @@ The wave functions on either side of each peak are included in [`results/part3_s
 
 ## 2. Time-dependent wave packets
 
-A stationary transmission curve tells us which energies pass through the potential, but it does not show the process in real space. To make that visible, the scattering eigenstates are combined with Gaussian momentum weights and evolved with their phase factor \(e^{-iEt}\).
+A stationary transmission curve tells us which energies pass through the potential, but it does not show the process in real space. To make that visible, the scattering eigenstates are combined with Gaussian momentum weights and evolved with their phase factor $e^{-iEt}$.
 
 Three packets were chosen to sample different parts of the transmission curve:
 
@@ -83,7 +83,7 @@ Two smaller calculations were used to check conventions and numerical resolution
 
 ### Free Gaussian propagation
 
-For a free particle, every momentum component keeps its magnitude and acquires the phase \(e^{-ip^2t/2}\). The packet centre moves at the group velocity while the envelope spreads. Reproducing both effects is a useful check of the Fourier normalization and time-dependent phase convention.
+For a free particle, every momentum component keeps its magnitude and acquires the phase $e^{-ip^2t/2}$. The packet centre moves at the group velocity while the envelope spreads. Reproducing both effects is a useful check of the Fourier normalization and time-dependent phase convention.
 
 ![Free Gaussian wave-packet propagation](results/part1_free_gaussian/free_propagation.gif)
 
@@ -97,11 +97,11 @@ $$
 \delta_L(p)=\frac{\sin(Lp)}{\pi p}
 $$
 
-becomes taller and more oscillatory as \(L\) increases. Instead of judging convergence only by its shape, the code integrates it against a smooth test function and compares the result with \(f(0)\). The integration grid is tied to the shortest sinc oscillation, which avoids aliasing at large \(L\).
+becomes taller and more oscillatory as $L$ increases. Instead of judging convergence only by its shape, the code integrates it against a smooth test function and compares the result with $f(0)$. The integration grid is tied to the shortest sinc oscillation, which avoids aliasing at large $L$.
 
 ![Finite-cutoff delta representation](results/part2_regularized_delta/regularized_delta.png)
 
-The numerical values for \(L=10,100,1000\) are saved in [`delta_convergence.csv`](results/part2_regularized_delta/delta_convergence.csv).
+The numerical values for $L=10,100,1000$ are saved in [`delta_convergence.csv`](results/part2_regularized_delta/delta_convergence.csv).
 
 ## 4. Finite-box basis
 
@@ -123,13 +123,13 @@ x\rightarrow xe^{i\theta},
 H(\theta)=e^{-2i\theta}T+V(xe^{i\theta}).
 $$
 
-As \(\theta\) increases, continuum eigenvalues rotate into the lower half of the complex-energy plane. Resonance poles remain comparatively stable and separate from those rotating branches.
+As $\theta$ increases, continuum eigenvalues rotate into the lower half of the complex-energy plane. Resonance poles remain comparatively stable and separate from those rotating branches.
 
 | Complex spectra for several angles | Transmission reconstructed from the poles |
 |---|---|
 | ![Complex-scaled eigenvalue spectrum](results/part6_complex_scaling/complex_eigenvalues_all.png) | ![Breit-Wigner and finite-difference transmission](results/part6_complex_scaling/breit_wigner_profiles_zoom.png) |
 
-Writing a pole as \(E_\mathrm{pole}=E_r-i\Gamma/2\), its real part gives the resonance position and \(\Gamma\) gives the width. A Breit–Wigner curve built from each pole reproduces the corresponding finite-difference peak near resonance. The agreement is especially clear for the narrow first peak; the broader second peak also shows more influence from the non-resonant background.
+Writing a pole as $E_\mathrm{pole}=E_r-i\Gamma/2$, its real part gives the resonance position and $\Gamma$ gives the width. A Breit–Wigner curve built from each pole reproduces the corresponding finite-difference peak near resonance. The agreement is especially clear for the narrow first peak; the broader second peak also shows more influence from the non-resonant background.
 
 The resonance wave-function plots illustrate why the coordinate rotation is useful. The outgoing solution grows on the real axis and is not square-integrable. Along the rotated coordinate it decays, which allows the resonance to be represented with an ordinary basis calculation.
 
@@ -138,8 +138,8 @@ The resonance wave-function plots illustrate why the coordinate rotation is usef
 | Part | Method | Main output |
 |---|---|---|
 | 1 | Analytic/Fourier Gaussian propagation | Packet spreading and motion |
-| 2 | Oscillatory quadrature | Convergence of \(\delta_L\) against a test function |
-| 3 | Three-point finite-difference propagation | \(T(E)\), \(R(E)\), and resonant continuum states |
+| 2 | Oscillatory quadrature | Convergence of $\delta_L$ against a test function |
+| 3 | Three-point finite-difference propagation | $T(E)$, $R(E)$, and resonant continuum states |
 | 4 | Superposition of scattering states | Time-dependent reflection and tunnelling |
 | 5 | Sine-basis diagonalization | Bound and localized box states |
 | 6 | Complex-scaled Hamiltonian | Resonance poles, widths, and Breit–Wigner profiles |
