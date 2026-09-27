@@ -18,7 +18,7 @@ The potential has a central well and two barriers near $x=\pm\sqrt{11.6}$. Their
 
 The two resonances found from the stationary calculation are:
 
-| Resonance | Transmission peak | Complex-scaled pole | Width $\Gamma=-2\operatorname{Im}E$ |
+| Resonance | Transmission peak | Complex-scaled pole | Width $\Gamma=-2\,\mathrm{Im}(E)$ |
 |---|---:|---:|---:|
 | First | 0.62097030 | $0.620971-0.000058i$ | 0.000116 |
 | Second | 1.32882395 | $1.327197-0.015447i$ | 0.030894 |
